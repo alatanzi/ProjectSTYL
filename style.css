@@ -25,6 +25,10 @@ body {
   background-color: var(--color-bg);
 }
 
+.content {
+  
+}
+
 /* Navigation Bars */
 /* Style for the top navigation bar */
 .topnav {
