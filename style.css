@@ -47,36 +47,6 @@ to this section's matching END comment to see page-specific styles.
     format("opentype");
 }
 
-/* Our remix on glitch button */
-.btn--remix {
-  font-family: HK Grotesk, sans-serif;
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
-  line-height: 1rem;
-  font-weight: 500;
-  height: 2.75rem;
-  align-items: center;
-  cursor: pointer;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #000000;
-  white-space: nowrap;
-  margin-left: auto;
-}
-.btn--remix img {
-  margin-right: 0.5rem;
-}
-.btn--remix:hover {
-  background-color: #D0FFF1;
-}
-
-
-
-
-
 
 body {
   font-family: HK Grotesk, sans-serif;
@@ -86,19 +56,19 @@ body {
 /* Navigation Bars */
 /* Style for the top navigation bar */
 .topnav {
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333333;
     color: #ffffff;
-    padding: 10px;
+    padding: 0px;
     z-index: 1; /* Ensure it's on top of other content */
 }
 
 .left {
     flex: 1; /* Takes up available space on the left */
-    padding: 0;
-    margin: 0;
 }
 
 .center {
