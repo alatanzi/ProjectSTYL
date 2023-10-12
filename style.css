@@ -22,8 +22,38 @@
 
 body {
   font-family: HK Grotesk, sans-serif;
-  background-color: var(--color-bg);
 }
+
+h1 {
+    font-family: HK Grotesk, sans-serif;
+}
+
+h2 {
+    font-family: HK Grotesk, sans-serif;
+}
+  
+h3 {
+    font-family: HK Grotesk, sans-serif;
+}
+
+h4 {
+    font-family: HK Grotesk, sans-serif;
+}
+
+p {
+    font-family: HK Grotesk, sans-serif;
+}
+
+a {
+    font-family: HK Grotesk, sans-serif;
+}
+
+a:hover {
+  color: #ff5722;
+  text-decoration: underline;
+}
+
+
 
 .content-wrap {
   max-width: 950px;
@@ -79,6 +109,11 @@ body {
 .right a {
   color: #ffffff;
   text-decoration: none;
+}
+
+a:hover {
+  color: #ff5722;
+  text-decoration: underline;
 }
 
 /* Other styles for your side navigation bar, content, and logo */
