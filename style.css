@@ -29,8 +29,9 @@ body {
   max-width: 950px;
   margin: 0 auto;
   padding: 20px;
-  padding-left: 150px;
+  padding-left: 200px;
   overflow: hidden;
+}
 
 /* Navigation Bars */
 /* Style for the top navigation bar */
