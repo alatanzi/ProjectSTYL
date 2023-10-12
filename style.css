@@ -6,6 +6,7 @@
   display: none !important;
 }
 
+
 /* Import fonts */
 @font-face {
   font-family: HK Grotesk;
@@ -19,7 +20,6 @@
     format("opentype");
 }
 
-
 body {
   font-family: HK Grotesk, sans-serif;
   background-color: var(--color-bg);
@@ -31,6 +31,11 @@ body {
   padding: 20px;
   padding-left: 200px;
   overflow: hidden;
+}
+
+.column-left {
+  float: left;
+  width: 70%;
 }
 
 /* Navigation Bars */
