@@ -16,7 +16,7 @@ to this section's matching END comment to see page-specific styles.
 
 /* Our default values set as CSS variables */
 :root {
-  --color-bg: #69F7BE;
+  --color-bg: #ffffff;
   --color-text-main: #000000;
   --color-primary: #FFFF00;
   --wrapper-height: 87vh;
@@ -49,7 +49,7 @@ to this section's matching END comment to see page-specific styles.
 
 /* Our remix on glitch button */
 .btn--remix {
-  font-family: HK Grotesk;
+  font-family: HK Grotesk, sans-serif;
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -62,7 +62,7 @@ to this section's matching END comment to see page-specific styles.
   box-sizing: border-box;
   border-radius: 4px;
   text-decoration: none;
-  color: #000;
+  color: #000000;
   white-space: nowrap;
   margin-left: auto;
 }
@@ -124,9 +124,9 @@ body {
 
 .sidenav {
     position: fixed;
-    top: 0;
+    top: 10;
     left: 0;
-    width: 250px;
+    width: 200px;
     height: 100%;
     background-color: #cccccc;
     color: #ffffff;
@@ -143,12 +143,13 @@ body {
 
 .sidenav a {
     text-decoration: none;
-    color: #ffffff;
+
 }
 
 /* Style for the content area */
 .sidenavcontent {
     margin-left: 250px; /* Width of the side navigation bar */
+
     padding: 20px;
 }
 
