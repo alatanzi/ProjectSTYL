@@ -111,12 +111,12 @@ a:hover {
   text-decoration: none;
 }
 
-a:hover {
+.right a:hover {
   color: #ff5722;
   text-decoration: underline;
 }
 
-/* Other styles for your side navigation bar, content, and logo */
+/* Side Navigation Bar */
 
 .sidenav {
   position: fixed;
@@ -134,20 +134,27 @@ a:hover {
 .sidenav ul {
   list-style: none;
   padding: 0;
-  overflow: hidden;
-  
+  overflow: hidden;  
 }
 
 .sidenav li {
   padding: 10px;
   background-color: pink;
   border: solid;
-  border-color: white;
+  border-color: green;
 }
 
-.sidenav a {
+.sidenav li:hover {
+  padding: 10px;
+  background-color: white;
+  border: solid;
+  border-color: green;
+}
+
+.sidenav a:hover {
   text-decoration: none;
   color: blue;
+  background-color: yellow;
 }
 
 /* Style for the content area */
