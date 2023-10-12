@@ -97,6 +97,8 @@ body {
 
 .left {
     flex: 1; /* Takes up available space on the left */
+    padding: 0;
+    margin: 0;
 }
 
 .center {
@@ -143,13 +145,12 @@ body {
 
 .sidenav a {
     text-decoration: none;
-
+    color: blue;
 }
 
 /* Style for the content area */
 .sidenavcontent {
     margin-left: 250px; /* Width of the side navigation bar */
-
     padding: 20px;
 }
 
