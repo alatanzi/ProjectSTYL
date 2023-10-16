@@ -4,6 +4,7 @@
 #92F1FF - sky blue - rgb(146, 241, 255)
 #EEEEEE - lighter gray - rgb(238, 238, 238)
 #cccccc - light gray - rgb(204, 204, 204)
+#4182D8 - dark blue - rgb(65, 130, 216)
 */
 
 
@@ -66,12 +67,10 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
 .content-wrap {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 1000px;
+  margin: 0;
+  padding: 0;
   padding-left: 200px;
   overflow: hidden;
 }
@@ -156,7 +155,7 @@ a:hover {
   padding: 10px;
   background-color: #92F1FF;
   border: solid;
-  border-color: green;
+  border-color: #4182D8;
 }
 
 .sidenav li:hover {
