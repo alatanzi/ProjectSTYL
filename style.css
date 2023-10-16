@@ -15,6 +15,9 @@
   display: none !important;
 }
 
+button {
+  margin-left: 20px;
+}
 
 /* Import fonts */
 @font-face {
