@@ -2,10 +2,11 @@
 #000000 - black - rgb(0, 0, 0)
 #FFFFFF - white - rgb(255, 255, 255)
 #92F1FF - sky blue - rgb(146, 241, 255)
-#EEEEEE - light gray - rgb(238, 238, 238)
-#cccccc - dark gray - 
-
+#EEEEEE - lighter gray - rgb(238, 238, 238)
+#cccccc - light gray - rgb(204, 204, 204)
 */
+
+
 /* Basic page style resets */
 * {
   box-sizing: border-box;
@@ -30,6 +31,7 @@
 
 body {
   font-family: HK Grotesk, sans-serif;
+  background-color: #EEEEEE;
 }
 
 h1 {
@@ -124,6 +126,8 @@ a:hover {
   text-decoration: underline;
 }
 
+
+
 /* Side Navigation Bar */
 
 .sidenav {
@@ -132,7 +136,7 @@ a:hover {
   left: 0;
   width: 200px;
   height: 100%;
-  background-color: #cccccc;
+  background-color: #000000;
   color: #ffffff;
   border: dashed;
   border-color: red;
@@ -147,7 +151,7 @@ a:hover {
 
 .sidenav li {
   padding: 10px;
-  background-color: pink;
+  background-color: #92F1FF;
   border: solid;
   border-color: green;
 }
