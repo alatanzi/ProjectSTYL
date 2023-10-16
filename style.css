@@ -1,3 +1,11 @@
+/* Colors https://colorhunt.co/palette/000000ffffff92f1ffeeeeee#justCreated
+#000000 - black - rgb(0, 0, 0)
+#FFFFFF - white - rgb(255, 255, 255)
+#92F1FF - sky blue - rgb(146, 241, 255)
+#EEEEEE - light gray - rgb(238, 238, 238)
+#cccccc - dark gray - 
+
+*/
 /* Basic page style resets */
 * {
   box-sizing: border-box;
@@ -79,7 +87,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333333;
+  background-color: #000000;
   color: #ffffff;
   overflow: hidden;
   z-index: 1; /* Ensure it's on top of other content */
