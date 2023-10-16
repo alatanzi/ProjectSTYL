@@ -145,13 +145,7 @@ a:hover {
   z-index: 0;
 }
 
-.sidenav ul {
-  list-style: none;
-  padding: 0;
-  overflow: hidden;  
-}
-
-.sidenav li {
+.sidenav a {
   padding: 10px;
   background-color: #92F1FF;
   border: solid;
@@ -165,8 +159,29 @@ a:hover {
   border-color: green;
 }
 
+.nav-link {
+    text-decoration: none;
+    display: block; /* Makes the entire link block-level */
+    padding: 10px; /* Add padding for the clickable area */
+    transition: background-color 0.3s;
+}
+
+.nav-box {
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.nav-box span {
+    /* You can style the text as needed */
+    margin: 0;
+  padding: 0;
+}
+
 .sidenav a:hover {
-  text-decoration: none;
+  text-decoration: underline;
   color: blue;
   background-color: yellow;
 }
