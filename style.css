@@ -128,13 +128,12 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
 /* Side Navigation Bar */
 
 .sidenav {
   position: fixed;
   top: 20;
+  padding-top: 10px;
   left: 0;
   width: 200px;
   height: 100%;
@@ -160,30 +159,28 @@ a:hover {
 }
 
 .nav-link {
-    text-decoration: none;
-    display: block; /* Makes the entire link block-level */
-    padding: 10px; /* Add padding for the clickable area */
-    transition: background-color 0.3s;
+  text-decoration: none;
+  display: block; /* Makes the entire link block-level */
+  padding: 10px; /* Add padding for the clickable area */
 }
 
 .nav-box {
-    padding: 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-box span {
-    /* You can style the text as needed */
-    margin: 0;
+  margin: 0;
   padding: 0;
 }
 
 .sidenav a:hover {
   text-decoration: underline;
   color: blue;
-  background-color: yellow;
+  background-color: pink;
+  transition: background-color 0.3s;
 }
 
 /* Style for the content area */
