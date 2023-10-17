@@ -17,7 +17,7 @@
 }
 
 button {
-  margin-left: 20px;
+  margin: 20px;
 }
 
 /* Import fonts */
@@ -91,7 +91,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000000;
+  background-color: #4182D8;
   color: #ffffff;
   overflow: hidden;
   z-index: 1; /* Ensure it's on top of other content */
