@@ -62,11 +62,6 @@ a {
     font-family: HK Grotesk, sans-serif;
 }
 
-a:hover {
-  color: #ff5722;
-  text-decoration: underline;
-}
-
 .content-wrap {
   max-width: 1000px;
   margin: 0;
@@ -85,13 +80,13 @@ a:hover {
 .topnav {
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: 60px;
   top: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4182D8;
+  background: linear-gradient(to right, #6b9ee1, #4182D8);
   color: #ffffff;
   overflow: hidden;
   z-index: 1; /* Ensure it's on top of other content */
@@ -99,6 +94,16 @@ a:hover {
 
 .left {
   flex: 1; /* Takes up available space on the left */
+}
+
+.left img {
+ border-right: solid;
+}
+
+.left a:hover {
+      width: 100px; /* Adjust the image size */
+    height: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .center {
