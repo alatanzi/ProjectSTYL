@@ -1,7 +1,7 @@
 <?php
 
 // Connect to the database
-$db = new PDO('mongodb+srv://Anomaly:P@ssw0rd@cluster0.s8h5ohw.mongodb.net/', 'root', '');
+$db = new MongoClient('mongodb+srv://@cluster0.s8h5ohw.mongodb.net/');
 
 // Get the username and password from the login form
 $username = $_POST['username'];
@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
   $_SESSION['user'] = $username;
 
   // Redirect the user to a protected page
-  header('Location: protected.php');
+  header('Location: index.html');
 } else {
   // Display an error message
   echo 'Invalid username or password.';
