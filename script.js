@@ -10,21 +10,31 @@ const loginSubmitButton = document.getElementById('loginSubmit');
 // Initialize a variable to track the login state
 let isLoggedIn = false;
 
-// Open the login form when the login button is clicked
+// Add a function to show the login popup
+function showLoginPopup() {
+    loginModal.classList.add('active');
+}
+
+// Add a function to hide the login popup
+function hideLoginPopup() {
+    loginModal.classList.remove('active');
+}
+
+// Event listener for the login button
 loginButton.addEventListener('click', function(e) {
     e.preventDefault();
-    loginModal.style.display = 'block';
+    showLoginPopup(); // Show the login popup
 });
 
-// Close the login form when the close button is clicked
+// Event listener for the close button
 closeButton.addEventListener('click', function() {
-    loginModal.style.display = 'none';
+    hideLoginPopup(); // Hide the login popup
 });
 
-// Close the login form when clicking outside the modal
+// Event listener for clicking outside the modal
 window.addEventListener('click', function(event) {
     if (event.target === loginModal) {
-        loginModal.style.display = 'none';
+        hideLoginPopup(); // Hide the login popup
     }
 });
 
