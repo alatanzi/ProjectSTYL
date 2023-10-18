@@ -1,7 +1,7 @@
 <?php
 
 // Connect to the database
-$db = new PDO('mysql:host=localhost;dbname=styl', 'root', '');
+$db = new PDO('mongodb+srv://Anomaly:P@ssw0rd@cluster0.s8h5ohw.mongodb.net/', 'root', '');
 
 // Get the username and password from the login form
 $username = $_POST['username'];
