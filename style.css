@@ -9,52 +9,54 @@
 
 /* Style for the login form popup */
 .login-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
-    z-index: 100; /* On top of other content */
-    opacity: 0; /* Set the initial opacity to 0 */
-    transition: opacity 0.3s; /* Add a transition effect for opacity changes */
-    pointer-events: none; /* Prevent interactions when the popup is hidden */
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+  z-index: 100; /* On top of other content */
+  opacity: 0; /* Set the initial opacity to 0 */
+  transition: opacity 0.5s; /* Add a transition effect for opacity changes */
+  pointer-events: none; /* Prevent interactions when the popup is hidden */
 }
 
 .login-modal.active {
-    opacity: 1; /* When the "active" class is added, the popup fades in */
-    pointer-events: auto; /* Enable interactions when the popup is visible */
+  display: block;
+  opacity: 1; /* When the "active" class is added, the popup fades in */
+  pointer-events: auto; /* Enable interactions when the popup is visible */
+   /* When the "active" class is added, the popup fades in */
 }
 
 .login-content {
-    background-color: #ffffff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the close button */
 .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* Style for the login form */
 .login-content h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .login-content form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Basic page style resets */
