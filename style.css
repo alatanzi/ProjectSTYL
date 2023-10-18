@@ -203,6 +203,7 @@ transition: 0.3s;
 
 
 /*-----------Login prompt----------*/)
+/* Style for the login form popup */
 .login-modal {
     display: none;
     position: fixed;
@@ -211,7 +212,7 @@ transition: 0.3s;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
-    z-index: 2; /* On top of other content */
+    z-index: 3; /* On top of other content */
 }
 
 .login-content {
@@ -243,3 +244,5 @@ transition: 0.3s;
     flex-direction: column;
     align-items: center;
 }
+
+/* Style for the rest of your content */
