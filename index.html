@@ -6,7 +6,7 @@
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <title>Project STYL</title>
     <link rel="stylesheet" href="/style.css" />
-    <script src="/script.js"></script>
+    
   </head>
   
 <!------------ Top Navigation ------------->   
@@ -56,11 +56,34 @@
   </header>
 <!------------ CONTENT ------------->   
   <body>
+    <script>
+    // Get references to the login button, login modal, and close button
+const loginButton = document.getElementById('loginButton');
+const loginModal = document.getElementById('loginModal');
+const closeButton = document.getElementById('closeButton');
+
+// Open the login form when the login button is clicked
+loginButton.addEventListener('click', function() {
+    loginModal.style.display = 'block';
+});
+
+// Close the login form when the close button is clicked
+closeButton.addEventListener('click', function() {
+    loginModal.style.display = 'none';
+});
+
+// Close the login form when clicking outside the modal
+window.addEventListener('click', function(event) {
+    if (event.target === loginModal) {
+        loginModal.style.display = 'none';
+    }
+});</script>
+        <!-- Login Form (hidden by default) -->
     <div class="login-modal" id="loginModal">
         <div class="login-content">
             <span class="close" id="closeButton">&times;</span>
             <h2>Login</h2>
-            <form>
+            <form action="login.php" method="post">
                 <input type="text" placeholder="Username">
                 <input type="password" placeholder="Password">
                 <button type="submit">Login</button>
@@ -77,9 +100,10 @@
 
     </div>  
   </div>
-    <!-- Login Form (hidden by default) -->
+
     
     <footer class="footer">
     </footer>
   </body>
+  
 </html>

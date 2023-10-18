@@ -1,25 +1,5 @@
-// Get references to the login button, login modal, and close button
-const loginButton = document.getElementById('loginButton');
-const loginModal = document.getElementById('loginModal');
-const closeButton = document.getElementById('closeButton');
 
-// Open the login form when the login button is clicked
-loginButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent the default link behavior
-    loginModal.style.display = 'block';
-});
 
-// Close the login form when the close button is clicked
-closeButton.addEventListener('click', function() {
-    loginModal.style.display = 'none';
-});
-
-// Close the login form when clicking outside the modal
-window.addEventListener('click', function(event) {
-    if (event.target === loginModal) {
-        loginModal.style.display = 'none';
-    }
-});
 
 
 // Get references to the search input and search button

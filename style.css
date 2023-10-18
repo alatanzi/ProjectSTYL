@@ -7,6 +7,47 @@
 #4182D8 - dark blue - rgb(65, 130, 216)
 */
 
+/* Style for the login form popup */
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    z-index: 100; /* On top of other content */
+}
+
+.login-content {
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Style for the login form */
+.login-content h2 {
+    text-align: center;
+}
+
+.login-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* Basic page style resets */
 * {
@@ -94,7 +135,7 @@ a {
   background: linear-gradient(to right, #6b9ee1, #4182D8);
   color: #ffffff;
   overflow: hidden;
-  z-index: 1; /* Ensure it's on top of other content */
+  z-index: 2; /* Ensure it's on top of other content */
 }
 
 .left {
@@ -102,9 +143,9 @@ a {
 }
 
 .left img {
- border-right: solid;
+  border-right: solid;
   border-color: pink;
-    display: block;
+  display: block;
   transition: background-color 0.3s;
 }
 
@@ -153,7 +194,7 @@ a {
   color: #ffffff;
   border-right: solid;
   border-color: pink;
-  z-index: 0;
+  z-index: 1;
 }
 
 .sidenav a {
@@ -203,46 +244,6 @@ a {
 
 
 /*-----------Login prompt----------*/)
-/* Style for the login form popup */
-.login-modal {
-    visibility: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
-    z-index: 3; /* On top of other content */
-}
 
-.login-content {
-    background-color: #ffffff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Style for the close button */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Style for the login form */
-.login-content h2 {
-    text-align: center;
-}
-
-.login-content form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 /* Style for the rest of your content */
