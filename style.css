@@ -109,8 +109,8 @@ a {
 }
 
 .left img:hover {
- filter: hue-rotate(90deg);
-transition: 0.3s;
+  filter: hue-rotate(90deg);
+  transition: 0.3s;
 }
 
 .center {
@@ -205,7 +205,7 @@ transition: 0.3s;
 /*-----------Login prompt----------*/)
 /* Style for the login form popup */
 .login-modal {
-    display: none;
+    visibility: none;
     position: fixed;
     top: 0;
     left: 0;
