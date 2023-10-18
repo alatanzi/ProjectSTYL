@@ -22,9 +22,7 @@
     <div>     
       <button id="searchButton">Search</button>     
     </div>
-      <div class="right">
-        <a href="login.html">Login</a>
-      </div>
+
   </div>
     
 <!------------ Side Navigation -------------> 
@@ -33,23 +31,7 @@
           <a href="index.html" class="nav-link">
             <div class="nav-box">
                 <span>Home</span>
-            </div></a>
-          <a href="explore.html" class="nav-link">
-            <div class="nav-box">
-                <span>Explore</span>
-            </div></a>
-                  <a href="upload.html" class="nav-link">
-            <div class="nav-box">
-                <span>Create Outfit</span>
-            </div></a>
-                  <a href="profile.html" class="nav-link">
-            <div class="nav-box">
-                <span>Your Profile</span>
-            </div></a>
-                  <a href="settings.html" class="nav-link">
-            <div class="nav-box">
-                <span>Settings</span>
-            </div></a>       
+            </div></a>     
       </div>
     </div>
      
@@ -60,23 +42,17 @@
     <div class="column-left">
 
       <h1>
-        Home page
+        Login
       </h1>
-
+<form action="login.php" method="post">
+  <input type="text" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Login">
+</form>
+      
     </div>  
   </div>
-    <!-- Login Form (hidden by default) -->
-    <div class="login-modal" id="loginModal">
-        <div class="login-content">
-            <span class="close" id="closeButton">&times;</span>
-            <h2>Login</h2>
-            <form>
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </div>
+
     <footer class="footer">
     </footer>
   </body>
