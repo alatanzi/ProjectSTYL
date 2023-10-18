@@ -1,5 +1,5 @@
 <?php
-
+// none of this works currently
 // Connect to the database
 $db = new MongoClient('mongodb+srv://@cluster0.s8h5ohw.mongodb.net/');
 
@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
   $_SESSION['user'] = $username;
 
   // Redirect the user to a protected page
-  header('Location: index.html');
+  header('Location: protected.php');
 } else {
   // Display an error message
   echo 'Invalid username or password.';
