@@ -9,6 +9,8 @@ const loginSubmitButton = document.getElementById('loginSubmit');
 
 // Initialize a variable to track the login state
 let isLoggedIn = false;
+
+
 function showLoginPopup() {
     loginModal.classList.add('active');
 }
@@ -18,28 +20,26 @@ function hideLoginPopup() {
     loginModal.classList.remove('active');
 }
 // Open the login form when the login button is clicked
-loginButton.addEventListener('click', function() {
-    
-    loginModal.classList.add('active');
-    loginModal.style.display = 'block';
-
+loginButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    showLoginPopup(); // Show the login popup    
 });
 
 // Close the login form when the close button is clicked
 closeButton.addEventListener('click', function() {
-    loginModal.style.display = 'none';
-  loginModal.classList.remove('active');
+    hideLoginPopup(); // Hide the login popup
 });
 
 // Close the login form when clicking outside the modal
 window.addEventListener('click', function(event) {
-    if (event.target === loginModal) {
-      loginModal.style.display = 'none';
-      loginModal.classList.remove('active');
+  if (event.target === loginModal) {
+    hideLoginPopup(); // Hide the login popup
     }
 });
 
-// Sample user data (for demonstration) (doesn't seem to do anything or work)
+
+// Following code doesn't seem to do anything or work
+// Sample user data (for demonstration) 
 const users = [
     { username: 'user1', password: 'password1' },
     { username: 'user2', password: 'password2' },
@@ -79,8 +79,7 @@ loginSubmitButton.addEventListener('click', function(e) {
 });
 
 
-
-
+// Search Button
 // Get references to the search input and search button
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
