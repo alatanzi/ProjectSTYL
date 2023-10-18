@@ -10,7 +10,7 @@ const loginSubmitButton = document.getElementById('loginSubmit');
 // Initialize a variable to track the login state
 let isLoggedIn = false;
 
-
+// Open the login form when the login button is clicked
 function showLoginPopup() {
     loginModal.classList.add('active');
 }

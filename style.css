@@ -9,7 +9,7 @@
 
 /* Style for the login form popup */
 .login-modal {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,7 +18,7 @@
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
   z-index: 2; /* On top of other content */
   opacity: 0; /* Set the initial opacity to 0 */
-  transition: opacity 1.3s; /* Add a transition effect for opacity changes */
+  transition: opacity 0.3s; /* Add a transition effect for opacity changes */
   pointer-events: none; /* Prevent interactions when the popup is hidden */
 }
 
@@ -253,8 +253,16 @@ a {
   padding: 40px;
 }
 
-
-/*-----------Login prompt----------*/)
+/* Style for the bottom link */
+.bottom-link {
+  position: absolute;
+  bottom: 20px;
+  left: 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #f2f2f2;
+}
+/*-----------Login prompt----------*/
 
 
 /* Style for the rest of your content */
