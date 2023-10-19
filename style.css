@@ -136,13 +136,7 @@ a {
 
 /*------------- Navigation Bars ----------------*/
 
-/* Style for the bottom link */
-.bottom-link a {
-            text-decoration: none;
-            font-size: 12px;
-            display: inline-block; /* Display the links next to each other */
-            margin: 0px;
-}
+
 
 /* Style for the top navigation bar */
 .topnav {
@@ -214,6 +208,21 @@ a {
   color: blue;
   filter: hue-rotate(90deg);
   transition: 0.3s;
+}
+
+/* Style for the bottom link */
+.bottom-link {
+  position: fixed;
+  bottom: 20px;
+  left: 7px;
+  font-size: 14px;
+  display: inline-block; /* Display the links next to each other */
+}
+
+.bottom-link a {
+  margin: 0px;
+  background-color: black;
+  border: 0px solid #000000;
 }
 
 /* Side Navigation Bar */
