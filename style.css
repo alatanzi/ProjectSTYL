@@ -215,13 +215,6 @@ a {
   border-color: #4182D8;
 }
 
-.sidenav li:hover {
-  padding: 10px;
-  background-color: white;
-  border: solid;
-  border-color: green;
-}
-
 .nav-link {
   text-decoration: none;
   display: block; /* Makes the entire link block-level */
@@ -255,12 +248,13 @@ a {
 
 /* Style for the bottom link */
 .bottom-link {
-  position: absolute;
-  bottom: 20px;
-  left: 32px;
+  display: flex;
+  margin: 0px;
+  position: bottom;
   text-decoration: none;
-  font-size: 16px;
-  color: #f2f2f2;
+  background-color: none;
+  border: none;
+
 }
 /*-----------Login prompt----------*/
 
