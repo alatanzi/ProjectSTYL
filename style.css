@@ -282,6 +282,6 @@ a {
 
 .bottom-link a {
   margin: 0px;
-  background-color: #333333;
+  text-decoration: none;
   border: 0px solid #000000;
 }
