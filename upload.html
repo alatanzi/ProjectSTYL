@@ -69,6 +69,28 @@
   </body>
   
  <!- insert background ->
-  <input type="submit" name="submit" style="background: url(images/stack.png); width:500px; height:500px; margin-right:3000px;" /> 
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <label for="image_upload" style="display: block; text-align: center; cursor: pointer; width: 500px; height: 500px; margin: 0 auto; background-size: contain; background-position: center; background-repeat: no-repeat;">
+        Select an image:
+        <input type="file" name="image_upload" id="image_upload" style="display: none;" accept="image/*">
+    </label>
+    <input type="submit" value="Upload Image" style="display: none;">
+</form>
+
+<script>
+    const imageUpload = document.querySelector("#image_upload");
+    const buttonLabel = document.querySelector("label[for='image_upload']");
+
+    imageUpload.addEventListener("change", function() {
+        const selectedFile = this.files[0];
+        if (selectedFile) {
+            const url = URL.createObjectURL(selectedFile);
+            buttonLabel.style.backgroundImage = `url(${url})`;
+        }
+    });
+</script>
+
+
+
   
 </html>
