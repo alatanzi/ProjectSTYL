@@ -68,8 +68,15 @@
     </footer>
   </body>
   
+  
+  
+  
  <!- insert background ->
 
+  
+  
+  
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,18 +86,14 @@
         text-align: center;
         cursor: pointer;
         width: 1000px;
-        height: 700px;
+        height: 50px; /* Reduced the height to create separation */
         margin: 0 auto;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
         background-color: #3498db; /* Button background color */
         color: #fff; /* Button text color */
         padding: 20px; /* Button padding */
         font-size: 18px; /* Button font size */
         border: 2px solid #2980b9; /* Button border */
         border-radius: 10px; /* Button border radius */
-        position: relative;
     }
 
     .custom-button:hover {
@@ -101,24 +104,15 @@
         display: none;
     }
 
-    .tag {
-        position: absolute;
-        background-color: #ff5733; /* Tag background color */
-        color: #fff; /* Tag text color */
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 14px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .delete-button {
-        background-color: #ff0000;
-        padding: 2px 5px;
-        margin-left: 5px;
-        border-radius: 50%;
-        cursor: pointer;
+    .image-container {
+        text-align: center;
+        margin: 0 auto;
+        width: 1000px;
+        height: 700px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
     }
 </style>
 </head>
@@ -131,49 +125,20 @@
     <input type="submit" value="Upload Image" style="display: none;">
 </form>
 
-<div id="tags-container"></div>
+<div class="image-container" id="imageContainer"></div>
 
 <script>
     const imageUpload = document.querySelector("#image_upload");
     const buttonLabel = document.querySelector("label[for='image_upload']");
-    const tagsContainer = document.querySelector("#tags-container");
+    const imageContainer = document.querySelector("#imageContainer");
 
     imageUpload.addEventListener("change", function() {
         const selectedFile = this.files[0];
         if (selectedFile) {
             const url = URL.createObjectURL(selectedFile);
-            buttonLabel.style.backgroundImage = `url(${url})`;
-
-            // Clear existing tags
-            tagsContainer.innerHTML = '';
+            imageContainer.style.backgroundImage = `url(${url})`;
         }
     });
-
-    buttonLabel.addEventListener("click", function(e) {
-        if (imageUpload.files.length === 0) {
-            alert("Please select an image first.");
-            return;
-        }
-
-        const tag = document.createElement("div");
-        tag.className = "tag";
-        tag.style.left = `${e.clientX - buttonLabel.getBoundingClientRect().left - 30}px`;
-        tag.style.top = `${e.clientY - buttonLabel.getBoundingClientRect().top - 15}px`;
-
-        const tagName = prompt("Enter a tag (e.g., hat, shoes, shirts):");
-        if (tagName) {
-            tag.innerHTML = `
-                ${tagName}
-                <span class="delete-button" onclick="removeTag(this)">X</span>
-            `;
-            tagsContainer.appendChild(tag);
-        }
-    });
-
-    function removeTag(deleteButton) {
-        const tag = deleteButton.parentElement;
-        tag.parentElement.removeChild(tag);
-    }
 </script>
 </body>
 </html>
