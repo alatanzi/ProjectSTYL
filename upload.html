@@ -75,7 +75,7 @@
 
   
   
-  
+
   
 <!DOCTYPE html>
 <html>
@@ -86,18 +86,18 @@
         text-align: center;
         cursor: pointer;
         width: 1000px;
-        height: 50px; /* Reduced the height to create separation */
+        height: 50px;
         margin: 0 auto;
-        background-color: #3498db; /* Button background color */
-        color: #fff; /* Button text color */
-        padding: 20px; /* Button padding */
-        font-size: 18px; /* Button font size */
-        border: 2px solid #2980b9; /* Button border */
-        border-radius: 10px; /* Button border radius */
+        background-color: #3498db;
+        color: #fff;
+        padding: 20px;
+        font-size: 18px;
+        border: 2px solid #2980b9;
+        border-radius: 10px;
     }
 
     .custom-button:hover {
-        background-color: #2980b9; /* Button background color on hover */
+        background-color: #2980b9;
     }
 
     .custom-button input[type="file"] {
@@ -113,6 +113,29 @@
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
+    }
+
+    .tag {
+        position: absolute;
+        background-color: #ff5733;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: move;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tag .tag-text {
+        flex-grow: 1;
+        min-width: 50px;
+    }
+
+    .tag .tag-text[contenteditable="true"] {
+        background: transparent; /* Set the background to transparent */
+        border: none; /* Remove border */
+        color: #000; /* Change text color */
     }
 </style>
 </head>
@@ -139,6 +162,61 @@
             imageContainer.style.backgroundImage = `url(${url})`;
         }
     });
+
+    let tagCounter = 1;
+    let isDragging = false;
+    let activeTag = null;
+
+    imageContainer.addEventListener("mousedown", function(e) {
+        if (e.target === imageContainer) {
+            const tagName = `Tag ${tagCounter++}`;
+            const tag = document.createElement("div");
+            tag.className = "tag";
+            tag.style.left = `${e.clientX - imageContainer.getBoundingClientRect().left}px`;
+            tag.style.top = `${e.clientY - imageContainer.getBoundingClientRect().top}px`;
+
+            tag.innerHTML = `
+                <span class="tag-text" contenteditable="true">${tagName}</span>
+                <span class="delete-button" onclick="removeTag(this)">X</span>
+            `;
+            imageContainer.appendChild(tag);
+        }
+        else if (e.target.classList.contains("tag")) {
+            isDragging = true;
+            activeTag = e.target;
+        }
+    });
+
+    imageContainer.addEventListener("mousemove", function(e) {
+        if (isDragging && activeTag) {
+            const imageRect = imageContainer.getBoundingClientRect();
+            activeTag.style.left = `${e.clientX - imageRect.left}px`;
+            activeTag.style.top = `${e.clientY - imageRect.top}px`;
+        }
+    });
+
+    imageContainer.addEventListener("mouseup", function() {
+        isDragging = false;
+        activeTag = null;
+    });
+
+    imageContainer.addEventListener("dblclick", function(e) {
+        if (e.target.classList.contains("tag-text")) {
+            e.target.contentEditable = "true";
+            e.target.focus();
+        }
+    });
+
+    imageContainer.addEventListener("blur", function(e) {
+        if (e.target.classList.contains("tag-text")) {
+            e.target.contentEditable = "false";
+        }
+    });
+
+    function removeTag(deleteButton) {
+        const tag = deleteButton.parentElement;
+        tag.parentElement.removeChild(tag);
+    }
 </script>
 </body>
 </html>
