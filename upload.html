@@ -76,7 +76,6 @@
   
   
 
-  
 <!DOCTYPE html>
 <html>
 <head>
@@ -119,8 +118,8 @@
         position: absolute;
         background-color: #ff5733;
         color: #fff;
-        padding: 5px;
-        border-radius: 5px;
+        padding: 12px;
+        border-radius: 10px;
         font-size: 14px;
         cursor: move;
         display: flex;
@@ -133,9 +132,9 @@
     }
 
     .tag .tag-text[contenteditable="true"] {
-        background: transparent; /* Set the background to transparent */
-        border: none; /* Remove border */
-        color: #000; /* Change text color */
+        background: transparent;
+        border: none;
+        color: #000;
     }
 </style>
 </head>
@@ -163,25 +162,26 @@
         }
     });
 
-    let tagCounter = 1;
     let isDragging = false;
     let activeTag = null;
 
-    imageContainer.addEventListener("mousedown", function(e) {
+    imageContainer.addEventListener("dblclick", function(e) {
         if (e.target === imageContainer) {
-            const tagName = `Tag ${tagCounter++}`;
             const tag = document.createElement("div");
             tag.className = "tag";
             tag.style.left = `${e.clientX - imageContainer.getBoundingClientRect().left}px`;
             tag.style.top = `${e.clientY - imageContainer.getBoundingClientRect().top}px`;
 
             tag.innerHTML = `
-                <span class="tag-text" contenteditable="true">${tagName}</span>
+                <span class="tag-text" contenteditable="true"></span>
                 <span class="delete-button" onclick="removeTag(this)">X</span>
             `;
             imageContainer.appendChild(tag);
         }
-        else if (e.target.classList.contains("tag")) {
+    });
+
+    imageContainer.addEventListener("mousedown", function(e) {
+        if (e.target.classList.contains("tag")) {
             isDragging = true;
             activeTag = e.target;
         }
