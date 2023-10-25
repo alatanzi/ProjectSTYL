@@ -112,7 +112,7 @@
         background-repeat: no-repeat;
         position: relative;
         display: inline-block;
-        border: 2px solid #ccc; /* Add a border to the image container */
+        border: 2px solid #ccc;
     }
 
     .sidebar {
@@ -163,6 +163,20 @@
         font-size: 16px;
         cursor: pointer;
     }
+
+    .upload-button {
+        display: block;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
 </style>
 </head>
 <body>
@@ -181,6 +195,7 @@
         <!-- Items and links will be dynamically added here -->
     </div>
     <button class="add-item-button" id="addItemButton">Add Item</button>
+    <button class="upload-button" id="uploadButton">Upload Data</button>
 </div>
 
 <script>
@@ -189,9 +204,8 @@
     const imageContainer = document.querySelector("#imageContainer");
     const sidebarItems = document.getElementById("sidebar-items");
     const addItemButton = document.getElementById("addItemButton");
+    const uploadButton = document.getElementById("uploadButton");
     let itemCount = 1;
-    let isDragging = false;
-    let activeTag = null;
 
     addItemButton.addEventListener("click", function () {
         const newItemDiv = document.createElement("div");
@@ -225,36 +239,32 @@
             `;
             imageContainer.appendChild(tag);
 
-            // Start dragging
+            let isDragging = false;
+            let offsetX, offsetY;
+
             tag.addEventListener("mousedown", function(e) {
                 isDragging = true;
-                activeTag = tag;
-                const tagRect = tag.getBoundingClientRect();
-                const imageRect = imageContainer.getBoundingClientRect();
-                const maxX = imageRect.width - tagRect.width;
-                const maxY = imageRect.height - tagRect.height;
-
-                const initialX = e.clientX - tagRect.left;
-                const initialY = e.clientY - tagRect.top;
-
-                document.onmousemove = function(e) {
-                    if (isDragging) {
-                        let left = e.clientX - imageRect.left - initialX;
-                        let top = e.clientY - imageRect.top - initialY;
-                        // Ensure the tag stays within the image container
-                        left = Math.min(maxX, Math.max(0, left));
-                        top = Math.min(maxY, Math.max(0, top));
-                        tag.style.left = left + "px";
-                        tag.style.top = top + "px";
-                    }
-                };
+                offsetX = e.clientX - tag.getBoundingClientRect().left;
+                offsetY = e.clientY - tag.getBoundingClientRect().top;
             });
 
-            // Stop dragging
-            tag.addEventListener("mouseup", function() {
+            document.addEventListener("mousemove", function(e) {
+                if (isDragging) {
+                    const imageRect = imageContainer.getBoundingClientRect();
+                    let left = e.clientX - imageRect.left - offsetX;
+                    let top = e.clientY - imageRect.top - offsetY;
+
+                    // Ensure the tag stays within the image container
+                    left = Math.min(imageRect.width - tag.offsetWidth, Math.max(0, left));
+                    top = Math.min(imageRect.height - tag.offsetHeight, Math.max(0, top));
+
+                    tag.style.left = left + "px";
+                    tag.style.top = top + "px";
+                }
+            });
+
+            document.addEventListener("mouseup", function() {
                 isDragging = false;
-                activeTag = null;
-                document.onmousemove = null;
             });
         }
     });
@@ -263,9 +273,15 @@
         const tag = deleteButton.parentElement;
         tag.parentElement.removeChild(tag);
     }
+
+    uploadButton.addEventListener("click", function() {
+        // Handle data upload here
+        // You can access the item names, links, and other information from the sidebar
+    });
 </script>
 </body>
 </html>
+
 
 
 
