@@ -75,7 +75,6 @@
 
   
   
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,12 +105,23 @@
     .image-container {
         text-align: center;
         margin: 0 auto;
-        width: 1000px;
+        width: 800px;
         height: 700px;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
+        display: inline-block;
+        border: 2px solid #ccc; /* Add a border to the image container */
+    }
+
+    .sidebar {
+        width: 200px;
+        height: 700px;
+        background-color: #f0f0f0;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
     }
 
     .tag {
@@ -136,6 +146,23 @@
         border: none;
         color: #000;
     }
+
+    .sidebar-item {
+        margin-bottom: 10px;
+    }
+
+    .add-item-button {
+        display: block;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
@@ -148,22 +175,42 @@
 </form>
 
 <div class="image-container" id="imageContainer"></div>
+<div class="sidebar" id="sidebar">
+    <h3>Sidebar</h3>
+    <div id="sidebar-items">
+        <!-- Items and links will be dynamically added here -->
+    </div>
+    <button class="add-item-button" id="addItemButton">Add Item</button>
+</div>
 
 <script>
     const imageUpload = document.querySelector("#image_upload");
     const buttonLabel = document.querySelector("label[for='image_upload']");
     const imageContainer = document.querySelector("#imageContainer");
+    const sidebarItems = document.getElementById("sidebar-items");
+    const addItemButton = document.getElementById("addItemButton");
+    let itemCount = 1;
+    let isDragging = false;
+    let activeTag = null;
 
-    imageUpload.addEventListener("change", function() {
+    addItemButton.addEventListener("click", function () {
+        const newItemDiv = document.createElement("div");
+        newItemDiv.className = "sidebar-item";
+        newItemDiv.innerHTML = `
+            <input type="text" placeholder="Item ${itemCount}">
+            <input type="text" placeholder="Link ${itemCount}">
+        `;
+        sidebarItems.appendChild(newItemDiv);
+        itemCount++;
+    });
+
+    imageUpload.addEventListener("change", function () {
         const selectedFile = this.files[0];
         if (selectedFile) {
             const url = URL.createObjectURL(selectedFile);
             imageContainer.style.backgroundImage = `url(${url})`;
         }
     });
-
-    let isDragging = false;
-    let activeTag = null;
 
     imageContainer.addEventListener("dblclick", function(e) {
         if (e.target === imageContainer) {
@@ -177,39 +224,38 @@
                 <span class="delete-button" onclick="removeTag(this)">X</span>
             `;
             imageContainer.appendChild(tag);
-        }
-    });
 
-    imageContainer.addEventListener("mousedown", function(e) {
-        if (e.target.classList.contains("tag")) {
-            isDragging = true;
-            activeTag = e.target;
-        }
-    });
+            // Start dragging
+            tag.addEventListener("mousedown", function(e) {
+                isDragging = true;
+                activeTag = tag;
+                const tagRect = tag.getBoundingClientRect();
+                const imageRect = imageContainer.getBoundingClientRect();
+                const maxX = imageRect.width - tagRect.width;
+                const maxY = imageRect.height - tagRect.height;
 
-    imageContainer.addEventListener("mousemove", function(e) {
-        if (isDragging && activeTag) {
-            const imageRect = imageContainer.getBoundingClientRect();
-            activeTag.style.left = `${e.clientX - imageRect.left}px`;
-            activeTag.style.top = `${e.clientY - imageRect.top}px`;
-        }
-    });
+                const initialX = e.clientX - tagRect.left;
+                const initialY = e.clientY - tagRect.top;
 
-    imageContainer.addEventListener("mouseup", function() {
-        isDragging = false;
-        activeTag = null;
-    });
+                document.onmousemove = function(e) {
+                    if (isDragging) {
+                        let left = e.clientX - imageRect.left - initialX;
+                        let top = e.clientY - imageRect.top - initialY;
+                        // Ensure the tag stays within the image container
+                        left = Math.min(maxX, Math.max(0, left));
+                        top = Math.min(maxY, Math.max(0, top));
+                        tag.style.left = left + "px";
+                        tag.style.top = top + "px";
+                    }
+                };
+            });
 
-    imageContainer.addEventListener("dblclick", function(e) {
-        if (e.target.classList.contains("tag-text")) {
-            e.target.contentEditable = "true";
-            e.target.focus();
-        }
-    });
-
-    imageContainer.addEventListener("blur", function(e) {
-        if (e.target.classList.contains("tag-text")) {
-            e.target.contentEditable = "false";
+            // Stop dragging
+            tag.addEventListener("mouseup", function() {
+                isDragging = false;
+                activeTag = null;
+                document.onmousemove = null;
+            });
         }
     });
 
@@ -220,6 +266,8 @@
 </script>
 </body>
 </html>
+
+
 
 
 
