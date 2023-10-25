@@ -74,7 +74,6 @@
  <!- insert background ->
 
   
-  
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,13 +82,12 @@
         display: block;
         text-align: center;
         cursor: pointer;
-        width: 1000px;
-        height: 50px;
+        width: 200px;
         margin: 0 auto;
         background-color: #3498db;
         color: #fff;
-        padding: 20px;
-        font-size: 18px;
+        padding: 10px;
+        font-size: 14px;
         border: 2px solid #2980b9;
         border-radius: 10px;
     }
@@ -102,25 +100,29 @@
         display: none;
     }
 
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
     .image-container {
         text-align: center;
-        margin: 0 auto;
-        width: 800px;
+        width: 600px; /* Adjust the width to your preference */
         height: 700px;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
-        display: inline-block;
         border: 2px solid #ccc;
+        margin-left: 0px; /* Shift it 100 pixels to the right */
+        float: left; /* Added float property */
     }
 
     .sidebar {
         width: 200px;
         height: 700px;
         background-color: #f0f0f0;
-        display: inline-block;
-        vertical-align: top;
+        float: right; /* Changed float property to right */
         padding: 10px;
     }
 
@@ -188,14 +190,16 @@
     <input type="submit" value="Upload Image" style="display: none;">
 </form>
 
-<div class="image-container" id="imageContainer"></div>
-<div class="sidebar" id="sidebar">
-    <h3>Sidebar</h3>
-    <div id="sidebar-items">
-        <!-- Items and links will be dynamically added here -->
+<div class="container">
+    <div class="image-container" id="imageContainer"></div>
+    <div class="sidebar" id="sidebar">
+        <h3>Sidebar</h3>
+        <div id="sidebar-items">
+            <!-- Items and links will be dynamically added here -->
+        </div>
+        <button class="add-item-button" id="addItemButton">Add Item</button>
+        <button class="upload-button" id="uploadButton">Upload Data</button>
     </div>
-    <button class="add-item-button" id="addItemButton">Add Item</button>
-    <button class="upload-button" id="uploadButton">Upload Data</button>
 </div>
 
 <script>
@@ -281,6 +285,8 @@
 </script>
 </body>
 </html>
+
+
 
 
 
