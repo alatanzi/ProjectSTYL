@@ -72,8 +72,20 @@ a {
   font-family: HK Grotesk, sans-serif;
 }
 
-
-
+footer{
+  border: 1px solid gray;
+	text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}
+.contact-info a{
+  padding: 10px; 
+  display: inline-block;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 
 /*------------- Style for the login form popup --------------*/
