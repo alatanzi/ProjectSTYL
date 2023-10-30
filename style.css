@@ -73,11 +73,20 @@ a {
 }
 
 footer{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid gray;
 	text-align: center;
   padding: 3px;
-  background-color: DarkSalmon;
-  color: white;
+  background-color:#92F1FF;
+  color: black;
+
 }
 .contact-info a{
   padding: 10px; 
@@ -85,6 +94,7 @@ footer{
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+
 }
 
 
