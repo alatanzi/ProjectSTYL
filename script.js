@@ -1,3 +1,88 @@
+// Script for upload.html stuff
+    const imageUpload = document.querySelector("#image_upload");
+    const buttonLabel = document.querySelector("label[for='image_upload']");
+    const imageContainer = document.querySelector("#imageContainer");
+    const sidebarItems = document.getElementById("sidebar-items");
+    const addItemButton = document.getElementById("addItemButton");
+    const uploadButton = document.getElementById("uploadButton");
+    let itemCount = 1;
+
+    addItemButton.addEventListener("click", function () {
+        const newItemDiv = document.createElement("div");
+        newItemDiv.className = "sidebar-item";
+        newItemDiv.innerHTML = `
+            <input type="text" placeholder="Item ${itemCount}">
+            <input type="text" placeholder="Link ${itemCount}">
+        `;
+        sidebarItems.appendChild(newItemDiv);
+        itemCount++;
+    });
+
+    imageUpload.addEventListener("change", function () {
+        const selectedFile = this.files[0];
+        if (selectedFile) {
+            const url = URL.createObjectURL(selectedFile);
+            imageContainer.style.backgroundImage = `url(${url})`;
+        }
+    });
+
+    imageContainer.addEventListener("dblclick", function(e) {
+        if (e.target === imageContainer) {
+            const tag = document.createElement("div");
+            tag.className = "tag";
+            tag.style.left = `${e.clientX - imageContainer.getBoundingClientRect().left}px`;
+            tag.style.top = `${e.clientY - imageContainer.getBoundingClientRect().top}px`;
+
+            tag.innerHTML = 
+              ` <span class="tag-text" contenteditable="true"></span>
+                <span class="delete-button" onclick="removeTag(this)">X</span> `;
+            imageContainer.appendChild(tag);
+
+            let isDragging = false;
+            let offsetX, offsetY;
+
+            tag.addEventListener("mousedown", function(e) {
+                isDragging = true;
+                offsetX = e.clientX - tag.getBoundingClientRect().left;
+                offsetY = e.clientY - tag.getBoundingClientRect().top;
+            });
+
+            document.addEventListener("mousemove", function(e) {
+                if (isDragging) {
+                    const imageRect = imageContainer.getBoundingClientRect();
+                    let left = e.clientX - imageRect.left - offsetX;
+                    let top = e.clientY - imageRect.top - offsetY;
+
+                    // Ensure the tag stays within the image container
+                    left = Math.min(imageRect.width - tag.offsetWidth, Math.max(0, left));
+                    top = Math.min(imageRect.height - tag.offsetHeight, Math.max(0, top));
+
+                    tag.style.left = left + "px";
+                    tag.style.top = top + "px";
+                }
+            });
+
+            document.addEventListener("mouseup", function() {
+                isDragging = false;
+            });
+        }
+    });
+
+    function removeTag(deleteButton) {
+        const tag = deleteButton.parentElement;
+        tag.parentElement.removeChild(tag);
+    }
+
+    uploadButton.addEventListener("click", function() {
+        // Handle data upload here
+        // You can access the item names, links, and other information from the sidebar
+    });
+// End of script for upload.html stuff
+
+
+
+
+
 // Login Popup starts here
 // So far all it does is pop up and then close. No error messages display and it doesn't seem to point to anywhere so it doesn't really do anything.
 
