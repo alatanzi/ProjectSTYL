@@ -38,46 +38,6 @@ window.addEventListener('click', function(event) {
 });
 
 
-// Following code doesn't seem to do anything or work
-// Sample user data (for demonstration) 
-const users = [
-    { username: 'user1', password: 'password1' },
-    { username: 'user2', password: 'password2' },
-];
-
-// Simulate user login and authentication
-function authenticateUser(username, password) {
-    // Search for the user in the users array (this is just a simple demonstration)
-    const user = users.find((user) => user.username === username);
-
-    if (!user) {
-        return { success: false, message: 'User not found' };
-    }
-
-    // Simulate password validation (in a real app, you should hash and compare passwords)
-    if (user.password === password) {
-        return { success: true, user: user, message: 'Login successful' };
-    } else {
-        return { success: false, message: 'Incorrect password' };
-    }
-}
-// Handle login form submission
-loginSubmitButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    // Simulate a login process (you should replace this with your actual login logic)
-    const username = document.querySelector('input[type="text"]').value;
-    const password = document.querySelector('input[type="password"]').value;
-    const authResult = authenticateUser(username, password);
-  
-    if (authResult.success) {
-        isLoggedIn = true;
-        loginModal.style.display = 'none';
-        loginButton.style.display = 'none'; // Hide the "Login" button after successful login
-    } else {
-        alert('Invalid login credentials. Please try again.');
-    }
-});
-
 
 // Search Button
 // Get references to the search input and search button
