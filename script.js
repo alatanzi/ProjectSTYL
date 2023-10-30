@@ -34,8 +34,9 @@
             tag.style.top = `${e.clientY - imageContainer.getBoundingClientRect().top}px`;
 
             tag.innerHTML = 
-              ` <span class="tag-text" contenteditable="true"></span>
-                <span class="delete-button" onclick="removeTag(this)">X</span> `;
+              ` <span>Description:</span>
+                <span class="tag-text" contenteditable="true"></span>
+                <span class="delete-button" onclick="removeTag(this)">&nbspX</span> `;
             imageContainer.appendChild(tag);
 
             let isDragging = false;
