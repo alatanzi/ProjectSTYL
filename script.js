@@ -26,7 +26,7 @@
         }
     });
 
-    imageContainer.addEventListener("dblclick", function(e) {
+    imageContainer.addEventListener("click", function(e) {
         if (e.target === imageContainer) {
             const tag = document.createElement("div");
             tag.className = "tag";
@@ -84,7 +84,14 @@
 
 
 
+
+
+
+
+
 // Login Popup starts here
+
+
 // So far all it does is pop up and then close. No error messages display and it doesn't seem to point to anywhere so it doesn't really do anything.
 
 // Get references to the login button, login modal, and close button
@@ -125,7 +132,13 @@ window.addEventListener('click', function(event) {
 
 
 
+
+
+
+
 // Search Button
+
+
 // Get references to the search input and search button
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
