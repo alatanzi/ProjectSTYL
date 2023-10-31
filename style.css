@@ -326,7 +326,11 @@ footer{
   text-decoration: none;
   border: 0px solid #000000;
 }
-
+.bottom-link a {
+  margin: 0px;
+  text-decoration: none;
+  border: 0px solid #000000;
+}
 
 
 /*------------ Styles for Create Outfit page ----------*/
