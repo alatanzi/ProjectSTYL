@@ -170,12 +170,12 @@ footer{
 }
 
 .content-wrap2 {
-  margin-left: 495px;
+  margin-left: 200px;
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  min-height: 0vh; /* Ensures vertical centering across the entire viewport height */
-  max-width:500px;
+  min-height: 100vh; /* Ensures vertical centering across the entire viewport height */
+ 
 }
 
 .column-left {
