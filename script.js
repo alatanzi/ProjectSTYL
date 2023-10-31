@@ -26,8 +26,8 @@
         }
     });
 
-    imageContainer.addEventListener("click", function(e) {
-        if (e.target === imageContainer) {
+    addItemButton.addEventListener("click", function(e) {
+        
             const tag = document.createElement("div");
             tag.className = "tag";
             tag.style.left = `${e.clientX - imageContainer.getBoundingClientRect().left}px`;
@@ -66,7 +66,7 @@
             document.addEventListener("mouseup", function() {
                 isDragging = false;
             });
-        }
+        
     });
 
     function removeTag(deleteButton) {
