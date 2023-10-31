@@ -391,6 +391,9 @@ footer{
   cursor: move;
   display: flex;
   justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .tag .tag-text {
