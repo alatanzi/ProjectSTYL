@@ -170,18 +170,19 @@ footer{
 }
 
 .content-wrap2 {
-  margin-left: 200px;
+ /* margin-left: 200px;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  min-height: 100vh; /* Ensures vertical centering across the entire viewport height */ 
+  justify-content: center;  Center horizontally 
+  align-items: center;  Center vertically 
+  min-height: 100vh; Ensures vertical centering across the entire viewport height */ 
+  display: inline-block; text-align: left;
 }
-
+/*
 .column-left {
   float: left;
   width: 70%;
 }
-
+*/
 .content-center {
   text-align: center;
   margin: 0px;
