@@ -362,6 +362,7 @@ footer{
 }
 
 .container {
+  display: flex;
   width: 800px;
   margin: 0 auto;
 }
@@ -377,15 +378,16 @@ footer{
   background-repeat: no-repeat;
   position: relative;
   border: 2px solid #cccccc;
-  margin-left: 100px; /* Shift it 100 pixels to the right */
+  margin-left: 150px; /* Shift it 100 pixels to the right */
   float: left; /* Added float property */
 }
 
 .sidebar {
   width: 200px;
-  height: 700px;
+  height: 100%;
   background-color: #f0f0f0;
-  float: right; /* Changed float property to right */
+  float: right;
+  padding-left: 100px;
   padding: 10px;
 }
 
