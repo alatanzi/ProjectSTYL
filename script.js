@@ -1,5 +1,5 @@
 // Script for upload.html stuff
-    const imageUpload = document.querySelector("#image_upload");
+   const imageUpload = document.querySelector("#image_upload");
     const buttonLabel = document.querySelector("label[for='image_upload']");
     const imageContainer = document.querySelector("#imageContainer");
     const sidebarItems = document.getElementById("sidebar-items");

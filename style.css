@@ -339,7 +339,7 @@ footer{
 
 
 /*------------ Styles for Create Outfit page ----------*/
-.custom-button {
+  .custom-button {
   display: block;
   text-align: center;
   cursor: pointer;
@@ -363,7 +363,6 @@ footer{
 
 .container {
   width: 800px;
-  left: 20;
   margin: 0 auto;
 }
 
@@ -378,7 +377,7 @@ footer{
   background-repeat: no-repeat;
   position: relative;
   border: 2px solid #cccccc;
-  margin-left: 0px; /* Shift it 100 pixels to the right */
+  margin-left: 100px; /* Shift it 100 pixels to the right */
   float: left; /* Added float property */
 }
 
@@ -401,9 +400,6 @@ footer{
   cursor: move;
   display: flex;
   justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .tag .tag-text {
@@ -448,4 +444,4 @@ footer{
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
-}
+} 
