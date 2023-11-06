@@ -363,6 +363,7 @@ footer{
 
 .container {
   width: 800px;
+  left: 20;
   margin: 0 auto;
 }
 
